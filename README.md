@@ -1,6 +1,8 @@
 # BlackCap Grabber v2.3 No Dual Hook
 
-# PROOFS :
+Leave a star ⭐
+
+# Proofs that BlackCap-Grabber was a Dual Hook :
 An investigation has uncovered that the `main.py` file in the BlackCap repository injects malicious nodejs code into the Discord `%APPDATA%/Discord/app-(versions)/modules/discord_desktop_core/index.js` module. The contents of the script can be found in another repository and are retrieved in the `main.py` file (see [link](https://github.com/KSCHdsc/BlackCap-Grabber/blob/main/main.py#L57)).
 
 The `inject.js` file, which is executed by the main thread of Electron (Discord), is responsible for stealing the Discord session token and collecting various information about the victim. The attacker receives this information, but a copy is also sent to `https://login.blackcap-grabber.com:3000/premium/` using a `POST` method (see [link](https://github.com/KSCHdsc/BlackCap-Inject/blob/main/index.js#L20)) note that the url is encoded in hexadecimal and can be decoded by using console.log() 
