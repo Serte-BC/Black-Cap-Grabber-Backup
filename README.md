@@ -210,13 +210,6 @@ v2.3.9: 2023-21-01
 + AntiDebug More Powerfull (check ip)
 ```
 
-
-### Authors
-- [@HisSlot](https://github.com/HisSlot)
-- [@Sans](https://github.com/002-sans)
-- [@loTus](https://github.com/loTus04)
-- [@KSCH](https://github.com/KSCHdsc) ⚠️ Dual Hook ⚠️
-
 ### Contributors (CapingTeam)
 - Inplex-sys
 - Xenis
