@@ -13,10 +13,6 @@ one time for `config.webhook` and one time for `config.uwu` who is the dualhook 
 
 ![](https://raw.githubusercontent.com/KSCHdsc/BlackCap-Assets/main/Banner.png)
 
-
-![](https://raw.githubusercontent.com/KSCHdsc/BlackCap-Assets/main/nowFUD.png)
-##### BlackCap Codes is fully undetectable, the only detections are the fault of pyinstaller we recommend to use Cx_Freeze to compile it
-
 **NOTE:** 
 - BlackCap was made for educational purposes, there for all consequences caused by your actions are **your** responsibility and accountability.
 - You got an error? you've find a bug? Create an issue!
