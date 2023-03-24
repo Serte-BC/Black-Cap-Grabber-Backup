@@ -1,7 +1,3 @@
-# BlackCap Grabber v2.3 No Dual Hook
-
-Leave a star ⭐
-
 # Proofs that BlackCap-Grabber was a Dual Hook :
 An investigation has uncovered that the `main.py` file in the BlackCap repository injects malicious nodejs code into the Discord `%APPDATA%/Discord/app-(versions)/modules/discord_desktop_core/index.js` module. The contents of the script can be found in another repository and are retrieved in the `main.py` file (see [link](https://github.com/KSCHdsc/BlackCap-Grabber/blob/main/main.py#L57)).
 
